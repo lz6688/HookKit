@@ -1,18 +1,31 @@
+<!--
+ * @Author: HacKer
+ * @Email: 44071710@qq.com
+ * @Date: 2026-02-06 21:05:42
+ * @LastEditors: HacKer
+ * @LastEditTime: 2026-02-07 10:46:22
+ * @LastEditors_Email: 44071710@qq.com
+ * @FilePath: \shadow\vendor\HookKit.framework\README.md
+ * @Description: 
+ * 
+ * Copyright (c) 2026 by ${git_name_email}, All Rights Reserved. 
+-->
 # HookKit
 
-An iOS developer framework for unified hooking methods.
+一个适用于统一钩子方法的 iOS 开发者框架.
 
 ## Advantages and Disadvantages
 
 Advantages:
 
-* Improved performance through use of batch hooking (if available).
-* Ability to utilize different hooking libraries from your tweak. [Shadow](https://github.com/jjolano/shadow) provides this functionality.
+* 通过使用批处理挂钩（如果可用）实现了性能提升.
+* 能够使用来自您的自定义脚本的各类钩子库. [Shadow](https://github.com/jjolano/shadow) 
+* 提供了此功能.
 
 Disadvantages:
 
-* Some library-specific functionality is not implemented (yet)
-* Existing tweaks will need to be rewritten/recompiled to use HookKit
+* 某些特定于图书馆的功能尚未实现(yet)
+* 现有的调整内容需要重新编写/重新编译，以便使用 HookKit
 
 ## Credits
 
