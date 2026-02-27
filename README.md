@@ -1,15 +1,4 @@
-<!--
- * @Author: HacKer
- * @Email: 44071710@qq.com
- * @Date: 2026-02-06 21:05:42
- * @LastEditors: HacKer
- * @LastEditTime: 2026-02-07 10:46:22
- * @LastEditors_Email: 44071710@qq.com
- * @FilePath: \shadow\vendor\HookKit.framework\README.md
- * @Description: 
- * 
- * Copyright (c) 2026 by ${git_name_email}, All Rights Reserved. 
--->
+
 # HookKit
 
 一个适用于统一钩子方法的 iOS 开发者框架.

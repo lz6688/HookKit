@@ -1,9 +1,9 @@
-Package: me.jjolano.hkmodule.fishhook
+Package: com.hacker.hkmodule.fishhook
 Name: HookKit Module (fishhook)
-Pre-Depends: me.jjolano.fmwk.hookkit
+Pre-Depends: com.hacker.fmwk.hookkit
 Version: 1.0.8
 Architecture: iphoneos-arm
 Description: This module provides fishhook library support for HookKit Framework.
-Maintainer: jjolano
-Author: jjolano
+Maintainer: hacker
+Author: hacker
 Section: HookKit (Modules)

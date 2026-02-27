@@ -7,7 +7,7 @@
 		<key>CFBundleExecutable</key>
 		<string>HookKitSubstituteModule</string>
 		<key>CFBundleIdentifier</key>
-		<string>me.jjolano.hkmodule.substitute</string>
+		<string>com.hacker.hkmodule.substitute</string>
 		<key>CFBundleDevelopmentRegion</key>
 		<string>English</string>
 		<key>CFBundleInfoDictionaryVersion</key>
@@ -21,7 +21,7 @@
 		<key>ModuleInfo</key>
 		<dict>
 			<key>Author</key>
-			<string>jjolano</string>
+			<string>hacker</string>
 			<key>Version</key>
 			<string>1.0</string>
 			<key>Description</key>
