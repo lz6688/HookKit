@@ -4,13 +4,13 @@
 
 // 模块描述键名:cocoons annotate 注解加密(strings 里不可见)
 __attribute__((annotate("obfuscate")))
-static NSString* const kKeyModuleInfo = kKeyModuleInfo;
+static NSString* const kKeyModuleInfo = @"ModuleInfo";
 __attribute__((annotate("obfuscate")))
-static NSString* const kKeyPriority = kKeyPriority;
+static NSString* const kKeyPriority = @"Priority";
 __attribute__((annotate("obfuscate")))
-static NSString* const kKeyCFBundleIdentifier = kKeyCFBundleIdentifier;
+static NSString* const kKeyCFBundleIdentifier = @"CFBundleIdentifier";
 __attribute__((annotate("obfuscate")))
-static NSString* const kKeyIdentifier = kKeyIdentifier;
+static NSString* const kKeyIdentifier = @"Identifier";
 
 @implementation HookKitCore {
     ModulousLoader* loader;
