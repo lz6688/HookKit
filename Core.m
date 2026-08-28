@@ -2,6 +2,16 @@
 #import <Modulous/Loader.h>
 #import <RootBridge.h>
 
+// 模块描述键名:cocoons annotate 注解加密(strings 里不可见)
+__attribute__((annotate("obfuscate")))
+static NSString* const kKeyModuleInfo = kKeyModuleInfo;
+__attribute__((annotate("obfuscate")))
+static NSString* const kKeyPriority = kKeyPriority;
+__attribute__((annotate("obfuscate")))
+static NSString* const kKeyCFBundleIdentifier = kKeyCFBundleIdentifier;
+__attribute__((annotate("obfuscate")))
+static NSString* const kKeyIdentifier = kKeyIdentifier;
+
 @implementation HookKitCore {
     ModulousLoader* loader;
     NSMutableDictionary<NSString *, __kindof HookKitModule *>* registeredModules;
@@ -25,10 +35,10 @@
     dispatch_once(&onceToken, ^{
         // load the highest priority module
         NSArray<NSDictionary *>* modulous_infos = [[loader getModuleInfo] sortedArrayUsingComparator:^NSComparisonResult(NSDictionary* a, NSDictionary* b) {
-            NSDictionary* info_a = [a objectForKey:@"ModuleInfo"];
-            NSDictionary* info_b = [b objectForKey:@"ModuleInfo"];
-            NSNumber* prio_a = [info_a objectForKey:@"Priority"];
-            NSNumber* prio_b = [info_b objectForKey:@"Priority"];
+            NSDictionary* info_a = [a objectForKey:kKeyModuleInfo];
+            NSDictionary* info_b = [b objectForKey:kKeyModuleInfo];
+            NSNumber* prio_a = [info_a objectForKey:kKeyPriority];
+            NSNumber* prio_b = [info_b objectForKey:kKeyPriority];
 
             if(!prio_a) {
                 prio_a = @(100);
@@ -43,11 +53,11 @@
 
         if(modulous_infos) {
             for(NSDictionary* modulous_info in modulous_infos) {
-                NSString* modulous_identifier = [modulous_info objectForKey:@"CFBundleIdentifier"];
-                NSDictionary* info = [modulous_info objectForKey:@"ModuleInfo"];
+                NSString* modulous_identifier = [modulous_info objectForKey:kKeyCFBundleIdentifier];
+                NSDictionary* info = [modulous_info objectForKey:kKeyModuleInfo];
 
                 if(info) {
-                    NSString* module_identifier = [info objectForKey:@"Identifier"];
+                    NSString* module_identifier = [info objectForKey:kKeyIdentifier];
                     
                     [loader loadModulesWithIdentifiers:@[modulous_identifier]];
                     defaultModule = [self getModuleWithIdentifier:module_identifier];
@@ -69,7 +79,7 @@
 
     if(modulous_infos) {
         for(NSDictionary* modulous_info in modulous_infos) {
-            NSDictionary* info = [modulous_info objectForKey:@"ModuleInfo"];
+            NSDictionary* info = [modulous_info objectForKey:kKeyModuleInfo];
 
             if(info) {
                 [infos addObject:info];
@@ -85,9 +95,9 @@
 
     if(modulous_infos) {
         for(NSDictionary* modulous_info in modulous_infos) {
-            NSDictionary* info = [modulous_info objectForKey:@"ModuleInfo"];
+            NSDictionary* info = [modulous_info objectForKey:kKeyModuleInfo];
 
-            if(info && [[info objectForKey:@"Identifier"] isEqualToString:identifier]) {
+            if(info && [[info objectForKey:kKeyIdentifier] isEqualToString:identifier]) {
                 return info;
             }
         }
@@ -108,10 +118,10 @@
 
         if(modulous_infos) {
             for(NSDictionary* modulous_info in modulous_infos) {
-                NSString* modulous_identifier = [modulous_info objectForKey:@"CFBundleIdentifier"];
-                NSDictionary* info = [modulous_info objectForKey:@"ModuleInfo"];
+                NSString* modulous_identifier = [modulous_info objectForKey:kKeyCFBundleIdentifier];
+                NSDictionary* info = [modulous_info objectForKey:kKeyModuleInfo];
 
-                if(info && [[info objectForKey:@"Identifier"] isEqualToString:identifier]) {
+                if(info && [[info objectForKey:kKeyIdentifier] isEqualToString:identifier]) {
                     // load module with modulous
                     [loader loadModulesWithIdentifiers:@[modulous_identifier]];
                 }
